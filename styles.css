@@ -8,6 +8,8 @@ body{
   background-size: cover; /*contain*/
   background: url(https://www.jing.fm/clipimg/full/177-1777771_cleopatra-blackjack-table-pharaoh-usa-blackjack-table-layout.png);
   background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 800px;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
   font-size: 10px;
