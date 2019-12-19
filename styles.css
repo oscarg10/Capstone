@@ -1,0 +1,42 @@
+html{
+  --primary-color: #00896F;
+  --primary-text-color: #ffffff;
+  --secondary-color: #008E9B;
+  --secondary-text-color: #000000;
+}
+body{
+  background-size: cover; /*contain*/
+  background: url(https://www.jing.fm/clipimg/full/177-1777771_cleopatra-blackjack-table-pharaoh-usa-blackjack-table-layout.png);
+  background-repeat: no-repeat;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  height: 100 vh; /* viewport heights */
+}
+h1{
+  text-align: center;
+  font-size:4.209em;
+}
+.titletags{
+  font-size: 2.369em;
+  margin-top: 100px;
+  text-align: center;
+}
+.playerTitle{
+  margin-top: 400px;
+}
+
+.container{
+  text-align: right;
+  margin-top: 50px;
+  margin-right: 400px;
+}
+
+.btn{
+  border: 1px;
+}
+header {
+  background-color: var(--primary-text-color);
+  padding: .2rem;
+  text-align: center;
+}
