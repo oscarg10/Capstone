@@ -6,9 +6,9 @@ html {
 }
 body {
   /* background-size: cover; contain */
-  background: url(https://www.jing.fm/clipimg/full/177-1777771_cleopatra-blackjack-table-pharaoh-usa-blackjack-table-layout.png) no-repeat center center;
+  /* background: url(https://www.jing.fm/clipimg/full/177-1777771_cleopatra-blackjack-table-pharaoh-usa-blackjack-table-layout.png) no-repeat center center;
   background-size: 54%; /*800px*/
-  background-position-y: 16rem;
+  /*background-position-y: 16rem; */
   justify-content: center;
   font-family: "Poppins", sans-serif;
   font-size: 10px;
@@ -29,9 +29,30 @@ ul {
   padding: 0;
   list-style-type: none;
 }
+/* How to align the table in the center without using margin */
+.content-table{
+  border-collapse: collapse;
+  margin: 25px 0;
+  margin-left: 28%;
+  font-size: 2.5em;
+  min-width: 400px;
+}
+.content-table thead tr{
+  background-color: var(--secondary-color);
+  color: #fff;
+  text-align: left;
+  }
+.content-table th{
+  padding: 0 50px;
+}
+.content-table td{
+  background-color: #fff;
+  color: #000;
+  text-align: left;
+  padding: 0 50px;
+}
 .home-bg {
-  background: url(https://www.jing.fm/clipimg/full/177-1777771_cleopatra-blackjack-table-pharaoh-usa-blackjack-table-layout.png)
-    no-repeat center center fixed;
+  background: no-repeat center center fixed cover;
 }
 .btn {
   background: var(--secondary-color);
@@ -86,7 +107,6 @@ ul {
 .my-form {
   margin: 40px;
   padding: 20px;
-  justify-content: flex-end;
 }
 .my-form .form-group {
   padding-bottom: 15px;
@@ -94,7 +114,7 @@ ul {
 .my-form label {
   display: block;
 }
-.my-form input {
+.my-form input, .my-form textarea {
   padding: 8px;
   width: 80%;
 }
