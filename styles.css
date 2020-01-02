@@ -29,6 +29,7 @@ ul {
   padding: 0;
   list-style-type: none;
 }
+
 /* How to align the table in the center without using margin */
 .content-table{
   border-collapse: collapse;
@@ -53,7 +54,10 @@ ul {
 }
 .home-bg {
   background: no-repeat center center fixed cover;
+  padding: 10px;
+  text-align: center;
 }
+
 .btn {
   background: var(--secondary-color);
   border-radius: 4px;
@@ -95,12 +99,12 @@ ul {
   text-align: center;
 }
 .playerTitle {
-  margin-top: 35% ;/*500px*/
+  margin-top: 0% ;/*500px*/
 }
 
 .container {
   color: white;
-  margin-right: 360px;
+  margin-right: 3em;
   margin-top: -70px;
   text-align: right;
 }
@@ -117,4 +121,22 @@ ul {
 .my-form input, .my-form textarea {
   padding: 8px;
   width: 80%;
+}
+@media screen and (min-width: 885px){
+#home-bg{
+  background: url("https://www.jing.fm/clipimg/full/177-1777771_cleopatra-blackjack-table-pharaoh-usa-blackjack-table-layout.png") no-repeat center center;
+  display: flex;
+  justify-content: center;
+  background-size: contain;
+  height: 70vh;
+}
+}
+@media screen and (max-width: 885px) {
+  #hero {
+    background: var(--primary-color) top center
+      no-repeat;
+    background-size: cover;
+    height: 75vh;
+    width: 100vw;
+  }
 }
