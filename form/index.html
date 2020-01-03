@@ -20,12 +20,7 @@
     </nav>
     <main>
       <div>
-        <form
-          class="my-form"
-          method="POST"
-          data-netlify= "true"
-          name= "contact"
-        >
+        <form class="my-form" method="POST" data-netlify="true" name="contact">
           <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" placeholder="Full Name" />
@@ -45,13 +40,15 @@
           </div>
           <div class="form-group">
             <label for="age">Age:</label>
-            <input type="number" name="age" value="21">
+            <input type="number" name="age" value="21" />
           </div>
           <div class="form-group">
             <label for="msg">Enter your message:</label>
             <textarea name="msg" id="msg" cols="100" rows="10"></textarea>
           </div>
-          <button class="btn submit">Submit</button>
+          <button class="btn">Submit</button>
+        </form>
       </div>
-
     </main>
+  </body>
+</html>
