@@ -1,6 +1,6 @@
 // 'Destructoring' each of the named components from the components directories.
 import { Header, Nav, Main, Footer } from "./components";
-// this is a node_moduleso we don't include './'
+// this is a node_modules we don't include './'
 import * as state from "./store";
 
 import capitalize from "lodash.capitalize";
@@ -10,7 +10,7 @@ import capitalize from "lodash.capitalize";
  * @param {Object} st - a piece of state
  */
 
-function render(st = state.Home) {
+function render(st = state.New) {
   //Query the document using a CSS selector
   console.log(st);
   document.querySelector("#root").innerHTML =
