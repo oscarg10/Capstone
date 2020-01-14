@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "npx browser-sync start --server --files '*.html, *.css, *.js'"
+    "serve": "parcel index.html"
   },
   "keywords": [],
   "author": "",
@@ -20,5 +20,10 @@
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-prettier": "^1.1.1",
     "stylelint-vscode": "^7.0.0-6"
+  },
+  "dependencies": {
+    "axios": "^0.19.1",
+    "lodash.capitalize": "^4.2.1",
+    "navigo": "^7.1.2"
   }
 }
