@@ -5,6 +5,15 @@ import * as state from "./store";
 
 import capitalize from "lodash.capitalize";
 
+import Navigo from "navigo";
+
+import axios from "axios";
+
+const router = new Navigo(location.origin);
+
+if (!location.pathname.slice(1) === "") {
+  render(state[capitalize(location.pathname.slice(1))]);
+}
 /**
  *
  * @param {Object} st - a piece of state
@@ -12,7 +21,6 @@ import capitalize from "lodash.capitalize";
 
 function render(st = state.New) {
   //Query the document using a CSS selector
-  console.log(st);
   document.querySelector("#root").innerHTML =
     //INVOKE each FUNCTIONAL COMPONENT passing in a piece of state each time.
     `
@@ -21,19 +29,14 @@ ${Nav(state.Links)}
 ${Main(st)}
 ${Footer(st)}
 `;
-  //TODO: Listen for clicks on our menu and log what was clicked on.
-  document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", function(event) {
-      //'stop the link from linking'
-      event.preventDefault();
-
-      /**
-       * Grab 'textContent from 'whoever' caused this event to fire.
-       * Providing that our 'link names' match up with a key in 'state',
-       * we can pass that piece of 'state' into our 'render' fxn.
-       */
-      render(state[capitalize(event.target.textContent)]);
-    });
-  });
+  router.updatePageLinks();
 }
-render();
+
+router
+  // 'on' is navigo's way of handling a specific type of event
+  .on(":page", params => {
+    render(state[capitalize(params.page)]);
+  })
+  .on("/", () => render())
+  // Resolve is required for all navigo methods.
+  .resolve();

@@ -1,1 +1,1 @@
-export default ["New Game", "Registration", "High Scores"];
+export default ["New-Game", "Registration", "Scores"];
