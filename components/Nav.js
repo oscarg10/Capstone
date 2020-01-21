@@ -4,9 +4,7 @@ function createListHTML(links) {
     .map(
       link =>
         `<li>
-            <a href="./${link
-              .toLowerCase()
-              .replace(" ", "-")}" data-navigo class="btn">${link}</a>
+            <a href="./${link.toLowerCase()}" data-navigo class="btn">${link}</a>
         </li>`
     )
     .join("");
