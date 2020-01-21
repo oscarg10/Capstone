@@ -1,4 +1,4 @@
-// 'Destructoring' each of the named components from the components directories.
+// 'Destructuring' each of the named components from the components directories.
 import { Header, Nav, Main, Footer } from "./components";
 
 // this is a node_modules we don't include './'
