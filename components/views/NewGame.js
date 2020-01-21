@@ -1,12 +1,12 @@
 export default `
 <div id="hero">
-  <div class="titletags">
-    <h2 class="dealerTitle">Dealer</h2>
+  <div class="titles">
+    <h2>Dealer</h2>
   </div>
   <div id="home-bg" class="flex align-center justify-center">
   </div>
-  <div class="titletags">
-    <h2 class="playerTitle">Player</h2>
+  <div class="titles">
+    <h2 class="player-title">Player</h2>
   </div>
   <div class="container">
     <button class="btn">Hit</button>
