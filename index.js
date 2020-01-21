@@ -1,5 +1,6 @@
 // 'Destructoring' each of the named components from the components directories.
 import { Header, Nav, Main, Footer } from "./components";
+
 // this is a node_modules we don't include './'
 import * as state from "./store";
 
@@ -7,13 +8,9 @@ import capitalize from "lodash.capitalize";
 
 import Navigo from "navigo";
 
-import axios from "axios";
+// import axios from "axios";
 
 const router = new Navigo(location.origin);
-
-if (!location.pathname.slice(1) === "") {
-  render(state[capitalize(location.pathname.slice(1))]);
-}
 
 /**
  *
@@ -24,11 +21,11 @@ function render(st = state.New) {
   document.querySelector("#root").innerHTML =
     //INVOKE each FUNCTIONAL COMPONENT passing in a piece of state each time.
     `
-${Header(st)}
-${Nav(state.Links)}
-${Main(st)}
-${Footer(st)}
-`;
+      ${Header(st)}
+      ${Nav(state.Links)}
+      ${Main(st)}
+      ${Footer(st)}
+    `;
   router.updatePageLinks();
 }
 
