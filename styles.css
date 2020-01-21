@@ -33,12 +33,9 @@ ul {
   padding: 0;
 }
 
-/* How to align the table in the center without using margin */
 .content-table {
   border-collapse: collapse;
   font-size: 2.5em;
-  margin-left: 28%;
-  margin: 25px 0;
   min-width: 400px;
 }
 
@@ -94,6 +91,10 @@ ul {
 
 .flex {
   display: flex;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .justify-space-around {
