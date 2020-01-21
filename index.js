@@ -31,6 +31,23 @@ function render(st = state.New) {
     `;
 
   router.updatePageLinks();
+
+  // Add event listeners for 'buttons' on 'new' 'page.'
+  if (capitalize(router.lastRouteResolved().url.slice(1)) === "") {
+    document.querySelector("#hit").addEventListener("click", () => {
+      axios
+        .get(`https://deckofcardsapi.com/api/deck/${st.deckID}/draw/?count=1`)
+        .then(response => {
+          state.New.currentPlayer.push(response.data.cards[0]);
+
+          // TODO{oscar}: Update st.currentPlayer.pointCount using the point value of the last card in st.currentPlayer.cards
+
+          // TODO{oscar}: Add a 'lib' function to check if 'busted' or not.
+        });
+
+      // TODO{oscar}: Add a handler for 'stand' that will do something similar 👆🏽for dealer.
+    });
+  }
 }
 
 router
