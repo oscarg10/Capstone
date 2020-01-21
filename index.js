@@ -14,11 +14,11 @@ const router = new Navigo(location.origin);
 if (!location.pathname.slice(1) === "") {
   render(state[capitalize(location.pathname.slice(1))]);
 }
+
 /**
  *
  * @param {Object} st - a piece of state
  */
-
 function render(st = state.New) {
   //Query the document using a CSS selector
   document.querySelector("#root").innerHTML =
