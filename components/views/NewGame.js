@@ -9,10 +9,9 @@ export default `
     <h2 class="playerTitle">Player</h2>
   </div>
   <div class="container">
-    <button class="btn">Hit</button>
-    <button class="btn">Stand</button>
-    <button class="btn">Double</button>
-    <button class="btn">Split</button>
+  <button class="btn" id="deal-btn">Deal</button>
+    <button class="btn" id="hit-btn">Hit</button>
+    <button class="btn" id ="stand-btn">Stand</button>
   </div>
 </div>
 `;
