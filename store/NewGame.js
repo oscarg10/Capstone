@@ -8,7 +8,9 @@ export default {
   currentPlayer: {
     // Updated if/when user logs in (https://firebase.google.com/docs/auth/admin/manage-users)
     id: null,
-    cards: []
+    cards: [],
+    // This will determine if 'busted' or not.
+    pointCount: 0
   },
   dealerCards: []
 };
