@@ -57,7 +57,8 @@ ul {
 }
 
 .home-bg {
-  background: no-repeat center center fixed cover;
+  background: no-repeat center center fixed;
+  background-size: cover;
   padding: 10px;
   text-align: center;
 }
