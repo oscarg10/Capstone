@@ -9,10 +9,12 @@ export default `
     <h2 class="player-title">Player</h2>
   </div>
   <div class="container">
-    <button class="btn">Hit</button>
-    <button class="btn">Stand</button>
-    <button class="btn">Double</button>
-    <button class="btn">Split</button>
-  </div>
+    <button class="btn" id="hit">Hit</button>
+    <button class="btn" id="stand">Stand</button>
+
+    <!-- TODO{oscar}: Add this functionality back in at a later time. -->
+    <!-- <button class="btn" id="double">Double</button>
+    <button class="btn" id="split">Split</button>
+  </div> -->
 </div>
 `;
