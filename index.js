@@ -17,6 +17,9 @@ const router = new Navigo(location.origin);
  * @param {Object} st - a piece of state
  */
 function render(st = state.New) {
+  // TODO{oscar}: Remove this for 'production.'
+  console.info("state is:", st);
+
   //Query the document using a CSS selector
   document.querySelector("#root").innerHTML =
     //INVOKE each FUNCTIONAL COMPONENT passing in a piece of state each time.
