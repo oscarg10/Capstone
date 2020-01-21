@@ -29,11 +29,12 @@ function render(st = state.New) {
       ${Main(st)}
       ${Footer(st)}
     `;
+
   router.updatePageLinks();
 }
 
 router
-  // 'on' is navigo's way of handling a specific type of event
+  // 'on' is Navigo's way of handling a specific type of event
   .on(":page", params => {
     render(state[capitalize(params.page)]);
   })
