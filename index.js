@@ -1,9 +1,9 @@
 // 'Destructuring' each of the named components from the components directories.
 import { Header, Nav, Main, Footer } from "./components";
 
-// this is a node_modules we don't include './'
 import * as state from "./store";
 
+// this is a node_modules we don't include './'
 import capitalize from "lodash.capitalize";
 
 import Navigo from "navigo";
