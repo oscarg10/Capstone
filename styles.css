@@ -4,16 +4,18 @@ html {
   --secondary-color: #056644;
   --secondary-text-color: #000000;
 }
+
 body {
   /* background-size: cover; contain */
   /* background: url(https://www.jing.fm/clipimg/full/177-1777771_cleopatra-blackjack-table-pharaoh-usa-blackjack-table-layout.png) no-repeat center center;
   background-size: 54%; /*800px*/
   /*background-position-y: 16rem; */
-  justify-content: center;
   font-family: "Poppins", sans-serif;
   font-size: 10px;
-  height: 100 vh; /* viewport heights */
+  height: 100vh; /* viewport heights */
+  justify-content: center;
 }
+
 header {
   background-color: var(--secondary-color);
   padding: 0.2rem;
@@ -21,39 +23,42 @@ header {
 }
 
 h1 {
-  text-align: center;
-  font-size: 4.209em;
   color: white;
-}
-ul {
-  padding: 0;
-  list-style-type: none;
+  font-size: 4.209em;
+  text-align: center;
 }
 
-/* How to align the table in the center without using margin */
-.content-table{
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.content-table {
   border-collapse: collapse;
-  margin: 25px 0;
-  margin-left: 28%;
   font-size: 2.5em;
   min-width: 400px;
 }
-.content-table thead tr{
+
+.content-table thead tr {
   background-color: var(--secondary-color);
   color: #fff;
   text-align: left;
-  }
-.content-table th{
+}
+
+.content-table th {
   padding: 0 50px;
 }
-.content-table td{
+
+.content-table td {
   background-color: #fff;
   color: #000;
-  text-align: left;
   padding: 0 50px;
+  text-align: left;
 }
+
 .home-bg {
-  background: no-repeat center center fixed cover;
+  background: no-repeat center center fixed;
+  background-size: cover;
   padding: 10px;
   text-align: center;
 }
@@ -64,6 +69,7 @@ ul {
   border: 1px solid black;
   color: white;
   cursor: pointer;
+  display: inline-block;
   font-size: 0.8rem;
   margin: 10px;
   padding: 10px 10px;
@@ -72,34 +78,44 @@ ul {
 }
 
 .btn a {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
 }
 
 .btn:hover {
   background-color: white;
   color: black;
 }
+
 .btn:hover a {
   color: black;
 }
+
 .flex {
   display: flex;
 }
+
+.justify-center {
+  justify-content: center;
+}
+
 .justify-space-around {
   justify-content: space-around;
 }
+
 /* .navButtons {
   border-radius: 50%;
   text-align: right;
 } */
-.titletags {
+
+.s {
   font-size: 2.369em;
   margin-bottom: 0;
   text-align: center;
 }
-.playerTitle {
-  margin-top: 0% ;/*500px*/
+
+.player-title {
+  margin-top: 0%; /*500px*/
 }
 
 .container {
@@ -108,33 +124,38 @@ ul {
   margin-top: -70px;
   text-align: right;
 }
+
 .my-form {
   margin: 40px;
   padding: 20px;
 }
+
 .my-form .form-group {
   padding-bottom: 15px;
 }
+
 .my-form label {
   display: block;
 }
-.my-form input, .my-form textarea {
+
+.my-form input,
+.my-form textarea {
   padding: 8px;
   width: 80%;
 }
-@media screen and (min-width: 885px){
-#home-bg{
-  background: url("https://www.jing.fm/clipimg/full/177-1777771_cleopatra-blackjack-table-pharaoh-usa-blackjack-table-layout.png") no-repeat center center;
-  display: flex;
-  justify-content: center;
-  background-size: contain;
-  height: 70vh;
-}
-}
-@media screen and (max-width: 885px) {
+
+@media screen and (min-width: 885px) {
+  #home-bg {
+    background: url("https://www.jing.fm/clipimg/full/177-1777771_cleopatra-blackjack-table-pharaoh-usa-blackjack-table-layout.png")
+      no-repeat center center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+  }
+
   #hero {
-    background: var(--primary-color) top center
-      no-repeat;
+    background: var(--primary-color) top center no-repeat;
     background-size: cover;
     height: 75vh;
     width: 100vw;

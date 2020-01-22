@@ -1,18 +1,20 @@
 export default `
 <div id="hero">
-  <div class="titletags">
-    <h2 class="dealerTitle">Dealer</h2>
+  <div class="titles">
+    <h2>Dealer</h2>
   </div>
   <div id="home-bg" class="flex align-center justify-center">
   </div>
-  <div class="titletags">
-    <h2 class="playerTitle">Player</h2>
+  <div class="titles">
+    <h2 class="player-title">Player</h2>
   </div>
   <div class="container">
-    <button class="btn">Hit</button>
-    <button class="btn">Stand</button>
-    <button class="btn">Double</button>
-    <button class="btn">Split</button>
-  </div>
+    <button class="btn" id="hit">Hit</button>
+    <button class="btn" id="stand">Stand</button>
+
+    <!-- TODO{oscar}: Add this functionality back in at a later time. -->
+    <!-- <button class="btn" id="double">Double</button>
+    <button class="btn" id="split">Split</button>
+  </div> -->
 </div>
 `;
