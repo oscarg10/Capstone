@@ -138,3 +138,53 @@ function getCardUI(card) {
   el.innerHTML = card.Suit + " " + card.Value;
   return el;
 }
+
+//Hit button functionality
+
+let currentPlayer = 0;
+function hit() {
+  //pop card from current player's deck
+  //check if player new points are over 21
+
+  let card = deck.pop();
+  players[currentPlayer].Hand.push(card);
+  renderCard(card, currentPlayer);
+  updatePoints();
+  checkPoints();
+}
+
+function checkPoints() {
+  if (players[currentPlayer].Points > 21) {
+    document.getElementById("status").innerHTML =
+      "Player: " + players[currentPlayer].ID + " LOST";
+  }
+}
+
+//Stay button
+
+function stay() {
+  //skip player after button is hit
+  if (currentPlayer != players.length - 1) {
+    document
+      .getElementById("player_" + currentPlayer)
+      .classList.remove("active");
+    currentPlayer += 1;
+    document.getElementById("player_" + currentPlayer).classList.add("active");
+  } else {
+    end();
+  }
+}
+function end() {
+  let winner = -1;
+  let score = 0;
+
+  for (let i = 0; i < players.length; i++) {
+    if (players[i].Points > score && players[i].Points < 22) {
+      winner = i;
+    }
+
+    score = players[i].Points;
+  }
+  document.getElementById("status").innerHTML =
+    "Winner: Player " + players[winner].ID;
+}
