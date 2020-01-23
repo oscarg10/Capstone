@@ -90,9 +90,6 @@ ul {
 .btn:hover a {
   color: black;
 }
-.container{
-  margin-left:vw;
-}
 
 .flex {
   display: flex;
