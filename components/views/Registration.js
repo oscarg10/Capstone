@@ -1,6 +1,6 @@
 export default `
       <div>
-        <form class="my-form" method="POST" data-netlify="true" name="contact">
+        <form class="my-form" method="POST" netlify name="contact">
           <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" placeholder="Full Name" />
@@ -26,7 +26,7 @@ export default `
             <label for="msg">Enter your message:</label>
             <textarea name="msg" id="msg" cols="100" rows="10"></textarea>
           </div>
-          <button class="btn">Submit</button>
+          <button class="btn" type="submit">Submit</button>
         </form>
       </div>
 `;
