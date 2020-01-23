@@ -191,24 +191,20 @@ function end() {
     "Winner: Player " + players[winner].ID;
 }
 
-for (let i = 0; i < state.currentPlayer.cards.length; i++) {
-  if (
-    firstDeal[i].value == "KING" ||
-    firstDeal[i].value == "QUEEN" ||
-    firstDeal[i].value == "JACK"
-  ) {
-    firstDeal[i].value = 10;
-  }
-  if (firstDeal[i].value == "ACE") {
-    firstDeal[i].value = 11;
-  }
-  if (
-    firstDeal[i].value != "KING" &&
-    firstDeal[i].value != "QUEEN" &&
-    firstDeal[i].value != "JACK" &&
-    firstDeal[i].value != "ACE"
-  ) {
-    firstDeal[i].value = parseInt(firstDeal[i].value);
+function getTotal(num) {
+  for (let i = 0; i < num.length; i++) {
+    if (num[i] === "KING" || num[i] === "QUEEN" || num[i] === "JACK") {
+      num[i] = 10;
+    } else if (num[i] === "ACE") {
+      num[i] = 11;
+    } else if (
+      num[i].value != "KING" &&
+      num[i].value != "QUEEN" &&
+      num[i].value != "JACK" &&
+      num[i].value != "ACE"
+    ) {
+      num[i].value = parseInt(num[i].value);
+    }
   }
 }
-allCards = firstDeal;
+getTotal();

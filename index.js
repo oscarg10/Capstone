@@ -127,21 +127,3 @@ axios
 console.log(state.New.dealerCards.pointCount);
 console.log(state.New.currentPlayer.pointCount);
 let dealerHand = state.New.dealerCards.pointCount;
-
-function getTotal(num) {
-  for (let i = 0; i < num.length; i++) {
-    if (num[i] === "KING" || num[i] === "QUEEN" || num[i] === "JACK") {
-      num[i] = 10;
-    } else if (num[i] === "ACE") {
-      num[i] = 11;
-    } else if (
-      num[i].value != "KING" &&
-      num[i].value != "QUEEN" &&
-      num[i].value != "JACK" &&
-      num[i].value != "ACE"
-    ) {
-      num[i].value = parseInt(num[i].value);
-    }
-  }
-}
-console.log(getTotal(dealerHand));
