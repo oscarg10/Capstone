@@ -8,7 +8,7 @@ import capitalize from "lodash.capitalize";
 
 import Navigo from "navigo";
 
-//import axios from "axios";
+import axios from "axios";
 
 const router = new Navigo(location.origin);
 
@@ -17,9 +17,6 @@ const router = new Navigo(location.origin);
  * @param {Object} st - a piece of state
  */
 function render(st = state.New) {
-  // TODO{oscar}: Remove this for 'production.'
-  console.info("state is:", st);
-
   //Query the document using a CSS selector
   document.querySelector("#root").innerHTML =
     //INVOKE each FUNCTIONAL COMPONENT passing in a piece of state each time.
@@ -77,8 +74,9 @@ axios
      */
     for (let i = 0; i < 4; i++) {
       promiseDraws.push(
-        axios.get(`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=1`)
+        axios.get(`https://deckofcardsapi.com/api/deck/new/draw/?count=2`)
       );
+      // console.log(promiseDraws);
     }
 
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
@@ -86,17 +84,29 @@ axios
       .then(response => {
         // '0' and '2' go to player
         // '1' and '3' go to dealer
-        // TODO{oscar}: Update this logic with a 'lib' function that 'sorts' out the cards for a multi-player game
+        // TODO: Update this logic with a 'lib' function that 'sorts' out the cards for a multi-player game
         state.New.currentPlayer.cards.push(
           // 'cards' from 'data' is an ARRAY with 1 element since we drew just 1 card 👆🏽
           response[0].data.cards[0],
           response[2].data.cards[0]
         );
 
-        state.New.dealerCards.push(
+        state.New.dealerCards.cards.push(
           response[1].data.cards[0],
           response[3].data.cards[0]
         );
+        let dealerCard = [];
+        dealerCard.push(
+          state.New.dealerCards.cards[0].value,
+          state.New.dealerCards.cards[1].value
+        );
+        let playerCard = [];
+        playerCard.push(
+          state.New.currentPlayer.cards[0].value,
+          state.New.currentPlayer.cards[1].value
+        );
+        state.New.dealerCards.pointCount.push(dealerCard);
+        state.New.currentPlayer.pointCount.push(playerCard);
 
         // TODO{oscar}: Also check for 'new' route
         if (capitalize(router.lastRouteResolved().url.slice(1)) === "") {
@@ -111,3 +121,27 @@ axios
   .catch(error => {
     console.error(`Error fetching deck! ${error}`);
   });
+// console.log(state.New.dealerCards.cards);
+// console.log(state.New.currentPlayer.cards);
+// console.log(dealerCard1);
+console.log(state.New.dealerCards.pointCount);
+console.log(state.New.currentPlayer.pointCount);
+let dealerHand = state.New.dealerCards.pointCount;
+
+function getTotal(num) {
+  for (let i = 0; i < num.length; i++) {
+    if (num[i] === "KING" || num[i] === "QUEEN" || num[i] === "JACK") {
+      num[i] = 10;
+    } else if (num[i] === "ACE") {
+      num[i] = 11;
+    } else if (
+      num[i].value != "KING" &&
+      num[i].value != "QUEEN" &&
+      num[i].value != "JACK" &&
+      num[i].value != "ACE"
+    ) {
+      num[i].value = parseInt(num[i].value);
+    }
+  }
+}
+console.log(getTotal(dealerHand));
