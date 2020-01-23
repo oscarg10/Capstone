@@ -100,15 +100,17 @@ function createPlayerUI() {
 //Start the game.
 
 function startGame() {
-  document.getElementById("btnStart").value = "Restart";
-  document.getElementById("status").style.display = "none";
-  //deal 2 cards to every player
-  currentPlayer = 0;
-  generateDeck();
-  shuffleCards();
-  createPlayers(2);
-  dealHands();
-  document.getElementById("player_" + currentPlayer).classList.add("active");
+  let newGame = document.getElementById("deal");
+  newGame.innerHTML = "";
+
+  axios
+    .get(`https://deckofcardsapi.com/api/deck/new/draw/?count=4`)
+    .then(function(response) {
+      newGame.innerHTML = generateNewGame(response);
+    })
+    .catch(function(error) {
+      newGame.innerHTML = generateErrorNew(error);
+    });
 }
 
 //Deal hand alternating cards to each player
@@ -188,3 +190,25 @@ function end() {
   document.getElementById("status").innerHTML =
     "Winner: Player " + players[winner].ID;
 }
+
+for (let i = 0; i < state.currentPlayer.cards.length; i++) {
+  if (
+    firstDeal[i].value == "KING" ||
+    firstDeal[i].value == "QUEEN" ||
+    firstDeal[i].value == "JACK"
+  ) {
+    firstDeal[i].value = 10;
+  }
+  if (firstDeal[i].value == "ACE") {
+    firstDeal[i].value = 11;
+  }
+  if (
+    firstDeal[i].value != "KING" &&
+    firstDeal[i].value != "QUEEN" &&
+    firstDeal[i].value != "JACK" &&
+    firstDeal[i].value != "ACE"
+  ) {
+    firstDeal[i].value = parseInt(firstDeal[i].value);
+  }
+}
+allCards = firstDeal;

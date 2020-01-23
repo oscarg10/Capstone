@@ -10,7 +10,10 @@ export default {
     id: null,
     cards: [],
     // This will determine if 'busted' or not.
-    pointCount: 0
+    pointCount: []
   },
-  dealerCards: []
+  dealerCards: {
+    cards: [],
+    pointCount: []
+  }
 };

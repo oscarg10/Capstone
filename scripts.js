@@ -66,3 +66,17 @@ console.log(playerHand, dealerHand);
 // document.getElementById("stand-btn").onclick = function() {
 //   console.log("It's happening");
 // };
+
+function startGame() {
+  let newGame = document.getElementById("deal");
+
+  axios
+    .get(`https://deckofcardsapi.com/api/deck/new/draw/?count=4`)
+    .then(function(response) {
+      newGame.innerHTML = generateNewGame(response);
+    })
+    .catch(function(error) {
+      newGame.innerHTML = generateErrorNew(error);
+    });
+}
+startGame();
