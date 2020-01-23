@@ -1,6 +1,6 @@
 export default `
       <div>
-        <form class="my-form" method="POST" data-netlify="true" name="contact">
+        <form class="my-form" method="POST" action="https://formspree.io/mlejkbep" name="contact">
           <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" placeholder="Full Name" />
@@ -16,7 +16,7 @@ export default `
           </div>
           <div class="form-group">
             <label for="phone">Phone:</label>
-            <input type="tel" name="fone" id="fone" />
+            <input type="tel" name="phone" id="phone" />
           </div>
           <div class="form-group">
             <label for="age">Age:</label>
