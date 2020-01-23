@@ -1,6 +1,6 @@
 export default `
       <div>
-        <form class="my-form" method="POST" netlify name="contact">
+        <form class="my-form" method="POST" data-netlify="true" name="contact">
           <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" placeholder="Full Name" />
